@@ -19,7 +19,7 @@ cargo run
 
 ## Included
 
-- `cordex` 0.1.1 with `Bot` and a `/ping` slash command
+- `cordex` 0.1.2 with `Bot` and a `/ping` slash command
 - `tracing` + `tracing-subscriber` (`RUST_LOG=info`)
 - `mimalloc` global allocator
 - Optimized `[profile.release]` (`lto = "fat"`, `codegen-units = 1`, `panic = "unwind"`)
