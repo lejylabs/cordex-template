@@ -20,11 +20,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             ctx.reply("Pong!").await
         })
         .command(
-            Command::slash("greet", "Greets a user").required_user("user", "Who to greet"),
+            Command::slash("greet", "Greets a user")
+                .required_user("user", "Who to greet")
+                .string("message", "Optional custom greeting"),
             |ctx| async move {
                 let user = ctx.user_option("user")?;
+                let greeting = ctx.string_option_opt("message")?.unwrap_or("Hello");
                 let text = MessageBuilder::new()
-                    .push("Hello ")
+                    .push(greeting)
+                    .push(" ")
                     .mention(&user.id)
                     .push("!")
                     .build();
@@ -32,7 +36,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             },
         )
         .on_ready(|ctx| async move {
-            tracing::info!("connected as {}", ctx.user().username);
+            tracing::info!("connected as {}", ctx.bot_user().username);
             Ok(())
         })
         .on_error(|_ctx, err| async move {
