@@ -18,3 +18,7 @@ codegen-units = 1
 strip = "debuginfo"
 # Keep panic = "unwind" so cordex's shard panic guard can recover a single shard.
 panic = "unwind"
+
+# Optimize the serde-heavy model crate for size without slowing down gateway/http.
+[profile.release.package.cordex-model]
+opt-level = "s"
