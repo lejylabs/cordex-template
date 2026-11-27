@@ -19,7 +19,7 @@ cargo run
 
 ## Included
 
-- `cordex` 0.2.3 with `Bot::from_env()`, `sync_dev_guild_from_env()`, `/ping` & `/greet` slash commands, `MessageBuilder`, `on_error`, and graceful `Ctrl+C` shutdown
+- `cordex` 0.2.4 with `Bot::from_env()`, `sync_dev_guild_from_env()`, `/ping` & `/greet` slash commands, `MessageBuilder`, `on_error`, and graceful `Ctrl+C` shutdown
 - Offline unit tests with `cordex-test` (`TestBot`)
 - `tracing` + `tracing-subscriber` (`RUST_LOG=info`)
 - `mimalloc` global allocator

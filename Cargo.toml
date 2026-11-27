@@ -5,14 +5,14 @@ edition = "2024"
 rust-version = "1.95"
 
 [dependencies]
-cordex = "0.2.3"
+cordex = "0.2.4"
 mimalloc = "0.1"
 tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 [dev-dependencies]
-cordex-test = "0.2.3"
+cordex-test = "0.2.4"
 
 [profile.release]
 opt-level = 3
